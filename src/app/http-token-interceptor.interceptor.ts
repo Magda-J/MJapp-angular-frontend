@@ -11,6 +11,10 @@ export const httpTokenInterceptorInterceptor: HttpInterceptorFn = (req, next) =>
     req = req.clone({headers: req.headers.set(crstTokenName, crsfToken)})
 
     req = req.clone({headers: req.headers.set('Referer', 'http://localhost:8000')})
+
+    const authToken = localStorage.getItem('auth_token');
+    
+    req = req.clone({headers: req.headers.set('Authorization', 'Bearer ')})
   }
   return next(req);
 };
