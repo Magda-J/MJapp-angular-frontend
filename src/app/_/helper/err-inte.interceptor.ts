@@ -1,7 +1,7 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
-import { catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs';
 import { throwError } from 'rxjs';
 
 export const errInteInterceptor: HttpInterceptorFn = (req, next) => {

@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) {}
 
+  logout() {
+    this.svc.logout();
+  }
+
   ngOnInit(): void {
    this.svc.getUser()
    .subscribe({

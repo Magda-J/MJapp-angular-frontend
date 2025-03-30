@@ -1,5 +1,7 @@
 <div class="home-container">
  <h1>Welcome to the Home Page @if(user != null) { {{user.name}} }</h1>
  <p>This is the main landing page.</p>
+
+ <button mat-raised-button color="warn" (click)="logout()">Logout</button>
   @if(errMessage != null) { <span style="color:red;"> {{errMessage}} </span>}
  </div>
