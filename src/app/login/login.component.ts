@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit{
       next: res => {
         this.router.navigate(['/home']);
         sessionStorage.setItem('token', res.token);
+        sessionStorage.setItem('user_id', res.user.id);
       },
       error: err => this.errMessage = err
     })
