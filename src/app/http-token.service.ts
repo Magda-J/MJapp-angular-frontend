@@ -32,6 +32,7 @@ export class HttpTokenService {
       .subscribe({
         next: () => {
           localStorage.removeItem('token');
+          sessionStorage.removeItem('token');
           this.router.navigate(['/login']);
         },
         error: err => console.error('Logout failed', err)

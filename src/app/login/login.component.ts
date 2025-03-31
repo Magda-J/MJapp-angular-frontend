@@ -48,7 +48,10 @@ export class LoginComponent implements OnInit{
     let {email,password} = this.loginForm.value
     this.svc.login(email,password)
     .subscribe({
-      next: res => this.router.navigate(['/home']),
+      next: res => {
+        this.router.navigate(['/home']);
+        sessionStorage.setItem('token', res.token);
+      },
       error: err => this.errMessage = err
     })
   }

@@ -28,6 +28,10 @@ export class HomeComponent implements OnInit {
     this.svc.logout();
   }
 
+  navigateToChat() {
+    this.router.navigate(['/chat']);
+  }
+
   ngOnInit(): void {
    this.svc.getUser()
    .subscribe({

@@ -8,9 +8,10 @@ export const httpTokenInterceptorInterceptor: HttpInterceptorFn = (req, next) =>
   const crsfToken = tokenEx.getToken() as string
 
   if(crsfToken != null && !req.headers.has(crstTokenName)) {
-    req = req.clone({headers: req.headers.set(crstTokenName, crsfToken), withCredentials: true})
-
-    req = req.clone({headers: req.headers.set('Referer', 'http://localhost:8000')})
+    // req = req.clone({headers: req.headers.set(crstTokenName, crsfToken), withCredentials: true})
+    if (sessionStorage.getItem('token')) {
+      req = req.clone({headers: req.headers.set('Authorization', `Bearer ${sessionStorage.getItem('token')}`), withCredentials: true})
+    }
 
   }
   return next(req);
