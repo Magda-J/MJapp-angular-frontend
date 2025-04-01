@@ -1,5 +1,5 @@
 <div class="home-container">
- <h1>Welcome to the Home Page @if(user != null) { {{user.name}} }</h1>
+ <h1>Welcome to the Home Page <strong>@if(user != null) { {{user.name}} }</strong></h1>
  <p>This is the main landing page.</p>
 
  <button mat-raised-button color="warn" (click)="logout()">Logout</button>

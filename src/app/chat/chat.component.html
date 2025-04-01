@@ -1,20 +1,16 @@
 <div class="chat-container">
-    <div class="messages">
-      <div *ngFor="let msg of messages" [ngClass]="{'sent': msg.sender_id === userId, 'received': msg.sender_id !== userId}">
-        <p>{{ msg.content }}</p>
-        <small>Status: {{ msg.status }}</small>
-        <button *ngIf="msg.status === 'pending'" (click)="completeMessage(msg.id)">Complete</button>
-      </div>
-    </div>
-  
     <div class="input-container">
       <input [(ngModel)]="receiverId" placeholder="Receiver ID">
       <input [(ngModel)]="newMessage" placeholder="Type a message">
       <button (click)="sendMessage()">Send</button>
     </div>
 
+    <button mat-raised-button color="warn" (click)="navigateToHome()">Home</button>
+    <button mat-raised-button color="warn" (click)="logout()">Logout</button>
+
     <div *ngIf="notification" class="notification">
-      {{ notification }}
+      <span>{{ notification }}</span>
+      <button (click)="closeNotification()" class="close-btn">×</button>
     </div>
     
     <div class="chat-container">

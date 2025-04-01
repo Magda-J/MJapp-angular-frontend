@@ -1,13 +1,134 @@
 .notification {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #28a745;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-  }
-  
+  background: #fffae6;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #c00;
+}
+
+.close-btn:hover {
+  color: #900;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.messages {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.messages .sent {
+  background-color: #ff7f00;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 45%;
+  padding: 10px;
+  margin: 10px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #ff7f00;
+  outline: none;
+}
+
+button {
+  background-color: #ff7f00;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #e66a00;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-color: #d65c00;
+}
+
+button.mat-raised-button {
+  background-color: #6a1b9a;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+button.mat-raised-button:hover {
+  background-color: #5e1c89;
+}
+
+button.mat-raised-button:focus {
+  outline: none;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.input-container input {
+  width: 45%;
+}
+
+.input-container button {
+  width: 45%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+}

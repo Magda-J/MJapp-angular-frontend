@@ -8,12 +8,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styles: [`
-    .home-container {
-      text-align: center;
-      margin-top: 50px;
-    }
-  `]
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   errMessage!: string | null;
