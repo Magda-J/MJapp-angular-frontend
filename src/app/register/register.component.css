@@ -1,14 +1,22 @@
-mat-card {
-    max-width: 400px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-  }
-  .full-width {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  .error {
-    color: red;
-    margin-top: 10px;
-  }
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #d7771d;
+}
+
+.register-card {
+  padding: 20px;
+  width: 350px;
+  text-align: center;
+}
