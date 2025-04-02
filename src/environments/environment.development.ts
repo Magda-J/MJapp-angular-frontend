@@ -1,8 +1,8 @@
 export const environment = {
-    production: true,
-    apiUrl: 'https://your-production-api-url.com', 
-    pusher: {
-      key: 'your-pusher-prod-key',
-      cluster: 'your-pusher-prod-cluster',
-    },
+  production: false,
+  apiUrl: 'http://localhost:8000', 
+  pusher: {
+    key: '0fc63344f517e9552c5b',
+    cluster: 'eu',
+  },
 };

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Pusher from 'pusher-js';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class ChatService {
 
   constructor(private http: HttpClient) {
     Pusher.logToConsole = true;
-    this.pusherClient = new Pusher('0fc63344f517e9552c5b', {
-      cluster: 'eu',
+    this.pusherClient = new Pusher(environment.pusher.key, {
+      cluster: environment.pusher.cluster,
       authEndpoint: 'http://localhost:8000/api/pusher/auth', 
       auth: {
         headers: {
@@ -24,6 +25,9 @@ export class ChatService {
         }
       }
     });
+
+    console.log('Pusher Key:', environment.pusher.key);
+    console.log('Pusher Cluster:', environment.pusher.cluster);
 
     const userId = sessionStorage.getItem('user_id');
     if (userId) {
