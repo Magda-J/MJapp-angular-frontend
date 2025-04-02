@@ -52,10 +52,6 @@ export class ChatComponent implements OnInit {
       });
     }
   }
-
-  completeMessage(messageId: number) {
-    this.chatService.completeMessage(messageId).subscribe();
-  }
   closeNotification() {
     this.notification = null;
   }

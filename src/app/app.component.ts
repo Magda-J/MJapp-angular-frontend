@@ -20,13 +20,10 @@ export class AppComponent implements OnInit {
   $tokenSvc = inject(HttpTokenService);
 
   ngOnInit(): void {
-    // this.tSvc.getCrsfToken()
-    //   .subscribe(x => console.log(x))
 
     this.httpClient.get('http://localhost:8000/sanctum/csrf-cookie', {
       withCredentials: true
     }).subscribe(() => {
-      console.log('CSRF token set successfully');
     });
   }
 }
